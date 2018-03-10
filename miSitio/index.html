@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<script src="js/logica.js"></script>
+	<title>HOJA DE REGISTRO</title>
+</head>
+
+<body>
+
+	<div class="header">
+		<header><strong>PARQUEADERO LOS MILLONARIOS</strong></header>
+	</div>
+
+	<div class="form">
+		<form id="formulario">
+
+		<fieldset class="seccion1">
+			<legend>INFORMACION DEL VEHICULO</legend>
+				<label for="placa">PLACA</label> 
+				<input class="campos" type="text" id="placa" placeholder=" ej: DQX786" required pattern="[A-Za-z0-9]{6}"><br><br>
+
+				<fieldset>
+					<legend>TIPO</legend>
+					<input class="campos" type="radio" id="opc1" name="radio" value="AUTOMOVIL" required checked>
+					<label for="opc1">AUTOMOVIL</label><br>
+					<input class="campos" type="radio" id="opc2" name="radio" value="MOTOCICLETA" required>
+					<label for="opc2">MOTOCICLETA</label>
+				</fieldset><br>
+
+		  		<label for="color">COLOR DEL VEHICULO</label> 
+		  		<input class="campos" id="color" type="color" required>
+		</fieldset>
+
+		<br><br>
+
+		<fieldset class="seccion2">
+			<legend>SERVICIO</legend>
+				<label for="num">TIEMPO DE PARQUEO (h)</label>
+				<input class="campos" type="number" id="num" min="1" max="12" required pattern="[0-9]*" ><br><br>
+
+				<label for="date">FECHA DE INGRESO</label>
+				<input class="campos" id="date" type="date" min="2018-03-09" required><br><br>
+
+				<label for="hora">HORA DE INGRESO</label>
+				<input class="campos" type="time" id="hora" required><br><br>
+
+				<label for="rango">CALIFIQUE EL SERVICIO EN UN RANGO DE 1 - 10</label>
+				<input class="campos" type="range" id="rango" min="0" max="10" required>
+		</fieldset>
+
+		<br><br>
+
+		<fieldset class="seccion3">
+			<legend>INFORMACION DEL PROPIETARIO</legend>
+				<label for="imagen">AGREGAR UNA IMAGEN</label>
+				<input type="file" class="campos" id="imagen" accept="image/*" /><br><br>
+
+				<label for="email">EMAIL </label>
+				<input type="email" class="campos" id="email" placeholder="miemail@gmail.com">
+		</fieldset>
+
+		<br><br>
+
+ 		<input type="checkbox"  id="chec" required>
+ 		<label for="chec" id="chec">ACEPTO QUE LEI LOS <a href="#">TERMINOS Y CONDICIONES</a></label><br><br>
+
+		<input type="button" class="boton" value="REGISTRAR" onclick="validateForm()">
+		<input type="reset" class="boton" value="LIMPIAR">
+		</form> 
+	</div>
+
+<br><hr><br>
+
+	<div class="tabla">
+		<table id="tabla">
+			<tr>
+				<th>PLACA</th>
+				<th>TIPO</th>
+				<th>COLOR</th>
+				<th>TIEMPO (h)</th>
+				<th>FECHA</th>
+				<th>HORA</th>
+				<th>CALIFICACION</th>
+				<th>IMAGEN</th>
+				<th>EMAIL</th>
+			</tr>
+		</table>
+	</div>
+
+
+
+	<div id="buscar" class="buscar">
+		<label for="buscar">BUSCAR</label>
+		<select id="buscar">
+			<option value="TIPO">TIPO</option>
+			<option value="PLACA">PLACA</option>
+		</select>
+
+		<input type="text" id="campoBuscar" placeholder="Buscar">
+		<button id="buttonBuscar" class="boton" onclick="buscar()">BUSCAR</button>
+	</div>
+
+</body>
+</html>
